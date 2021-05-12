@@ -1,13 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './header.css';
 function Header(props) {
   return (
     <div className="header">
-      <h3 className="logo">Admin</h3>
+      <h4  className="alt logo">{props.title}</h4>
+      <h6 className='alt text-center'>Flight Booking System</h6>
       <div className="header-right">
-        <Link className='link' to='/signin'>Sign In</Link>
-        <Link className='link active' to='/signin'>Logout</Link>
+        {props.children}
       </div>
     </div>
   )

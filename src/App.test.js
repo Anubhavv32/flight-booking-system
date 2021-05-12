@@ -1,8 +1,23 @@
-import { render, screen } from '@testing-library/react';
+import { shallow } from 'enzyme';
+import React from 'react';
+
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe('App Component', () => {
+  it('Should render without errors', () => {
+    const wrapper = shallow(<App />);
+    const component = wrapper.find('.App');
+    expect(component.length).toBe(1);
+  })
+  // it('test hide btn handler', () => {
+  //   const classInstance = wrapper.instance();
+  //   classInstance.hideBtnHandler();
+  //   const newState = classInstance.state.hideBtn;
+  //   expect(newState).toBe(true);
+  // })
+  // it('test hide btn handler', () => {
+  //   const classInstance = wrapper.instance();
+  //   const newValue = classInstance.plusCounter(6);
+  //   expect(newValue).toBe(7);
+  // })
+})

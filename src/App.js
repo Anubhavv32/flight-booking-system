@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-            <Route path="/" exact ><Redirect to="/login" /></Route>
+            {/* <Route path="/" exact component={reduxForm} ></Route> */}
             <Route path="/login" component={Login} />
             <Route path="/admin" component={Admin} />
             {/* <Route path="/flight" component={Information} />

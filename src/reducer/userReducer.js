@@ -1,7 +1,6 @@
 const userState ={ name: '', email: '', mobileNo: '', password: '', id: 0, allProfile: [{id: 0, name: 'Admin', email: 'admin123@gmail.com', mobileNo: 9292929292, password: 'admin123', type: 'Admin'}], isLogin: false};
 
 const Reducer=(state=userState,action)=>{
-  console.log(state);
   switch(action.type){
     case "CHANGE_INPUTDATA_USER":
       console.log(action.payload.name, action.payload.value);

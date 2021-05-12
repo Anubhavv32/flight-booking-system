@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { Link } from 'react-router-dom';
 
 import { changeHandler, allowLogin } from '../Action/Action';
+import Header from '../Component/Header/Header';
 export const Login = (props) => {
   const history = useHistory();
   const loginForm =async (event) => {
@@ -23,8 +24,11 @@ export const Login = (props) => {
   const { errors, email, password, submitted, loginStatus, inputChange } = props;
   return (
     <div className="pagecenter loginForm" style={{width: '100%'}}>
+        <Header title='Login'>
+          <Link className="alt active" to='/'>Logout</Link>
+        </Header>
         <form onSubmit={loginForm}>
-          <div className="row">
+          <div className="row mt-5">
             <div className="col-sm-4"></div>
             <label htmlFor="email" className="col-sm-1 col-form-label">Email:</label>
             <div className="col-sm-3 mb-2">
@@ -57,6 +61,7 @@ export const Login = (props) => {
           <div className="row">
             <div className="col-sm-4 mt-2"></div>
             <div className="col-sm-4 right">
+              <p>Are you admin?</p>
               <Link to="/sign-up">Register</Link>
             </div>
             <div className="col-sm-4 mt-2"></div>

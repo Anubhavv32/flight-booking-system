@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
-import Signup from './Signup';
-import UserList from './UserList';
-import { changeHandler, allowLogin, submitNewUserForm } from '../Action/Action';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Header from '../Component/Header/Header';
+import Signup from './Signup';
+import UserList from './UserList';
 
 class Admin extends Component {
   render() {
     const { allProfile } = this.props;
     return (
       <div className='container-fluid px-0'>
-        <Header />
+        <Header title='Admin' >
+          <Link class="alt link" to='/login'>Login</Link>
+          <Link class="alt link" >History</Link>
+          <Link className="alt active" to='/'>Logout</Link>
+        </Header>
         <div className="row mt-5 mx-3">
         <div className="col-sm-6">
           <div className="card h-100">
